@@ -36,7 +36,7 @@ function fetcher() {
   .then((data) => {
     tsajson = data;
     if (!data.pageInfo.totalResults == 0) {
-      destcheck = true;
+      tsacheck = true;
       updater();
       }
   });
