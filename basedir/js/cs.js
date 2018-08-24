@@ -54,31 +54,42 @@ function fetcher() {
 fetcher();
 setInterval(fetcher, 300000);
 
-
 function updater() {
 const dataset = document.querySelectorAll('[data-who]');
-
 dataset.forEach(item => {
 if (item.dataset.who == 'icecheck' && icecheck == true) {
-  console.log(item.children);
   item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'destcheck' && destcheck == true) {
-  console.log(item.children);
   item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'hypcheck' && hypcheck == true) {
-  console.log(item.children);
   item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'tsacheck' && tsacheck == true) {
-  console.log(item.children);
+  console.log(item.dataset.who == false)
   item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
+})
+
+dataset.forEach(item => {
+  const data = item.dataset.who;
+  if (item.classList.value.includes('active') && data == 'tsacheck' && tsacheck == false) {
+    item.classList.toggle('active');
+  }
+  if (item.classList.value.includes('active') && data == 'icecheck' && icecheck == false) {
+    item.classList.toggle('active');
+  }
+  if (item.classList.value.includes('active') && data == 'hypcheck' && hypcheck == false) {
+    item.classList.toggle('active');
+  }
+  if (item.classList.value.includes('active') && data == 'destcheck' && destcheck == false) {
+    item.classList.toggle('active');
+  }
 })
 
 }
