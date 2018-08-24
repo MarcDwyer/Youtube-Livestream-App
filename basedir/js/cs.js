@@ -52,31 +52,31 @@ function fetcher() {
   });
 }
 fetcher();
+setInterval(fetcher, 300000);
+
 
 function updater() {
-  console.log('helo');
-
 const dataset = document.querySelectorAll('[data-who]');
 
 dataset.forEach(item => {
 if (item.dataset.who == 'icecheck' && icecheck == true) {
   console.log(item.children);
-  item.children[1].classList.add('active');
+  item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'destcheck' && destcheck == true) {
   console.log(item.children);
-  item.children[1].classList.add('active');
+  item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'hypcheck' && hypcheck == true) {
   console.log(item.children);
-  item.children[1].classList.add('active');
+  item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 if (item.dataset.who == 'tsacheck' && tsacheck == true) {
   console.log(item.children);
-  item.children[1].classList.add('active');
+  item.children[1].classList.toggle('active');
   item.addEventListener('click', addVideo)
 }
 })
@@ -109,4 +109,3 @@ function addVideo() {
 }
 
 
-setInterval(updater, 300000);
