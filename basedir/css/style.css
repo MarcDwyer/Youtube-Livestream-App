@@ -67,11 +67,11 @@ html, body {
 
 .youtube {
   display: block;
-  margin-top: 25px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  height: 45px;
-  width: 45px; }
+  height: 40px;
+  width: 40x; }
 
 .close {
   height: 30px;
